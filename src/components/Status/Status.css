@@ -5,7 +5,6 @@
 
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
 }
 
@@ -18,11 +17,33 @@
   position: absolute;
   height: 18px;
   left: 1.72%;
-  right: 87.67%;
 
   font-style: normal;
   font-weight: bold;
   line-height: 18px;
 
   color: #2d333a;
+}
+
+.status-type {
+  position: absolute;
+  height: 18px;
+  left: 24.21%;
+}
+
+.status-view {
+  position: absolute;
+  left: 45.63%;
+}
+
+.button-view {
+  position: absolute;
+  width: 80px;
+  height: 31px;
+  left: 1110px;
+
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  box-sizing: border-box;
+  border-radius: 5px;
 }
