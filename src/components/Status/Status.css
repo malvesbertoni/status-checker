@@ -1,0 +1,28 @@
+/* Styling Status bar */
+.status-section {
+  width: 1103px;
+  height: 38px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.status-section div {
+  display: flex;
+  flex-direction: row;
+}
+
+.status-title {
+  position: absolute;
+  height: 18px;
+  left: 1.72%;
+  right: 87.67%;
+
+  font-style: normal;
+  font-weight: bold;
+  line-height: 18px;
+
+  color: #2d333a;
+}
