@@ -2,8 +2,8 @@
   Status.js renders the information about a determined Service's Status.
   This component receives the displayed props from his owner (@Display.js).
 */
-
 import "./Status.css";
+import ViewButton from "../ViewButton/ViewButton";
 
 const Status = () => {
   return (
@@ -14,7 +14,7 @@ const Status = () => {
         <img src="/statusError.svg" alt="Red circle error" />
         <h2 className="status-state">Status Placeholder</h2>
       </div>
-      <button className="button-view">View</button>
+      <ViewButton />
     </section>
   );
 };

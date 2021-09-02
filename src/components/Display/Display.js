@@ -9,7 +9,7 @@ import Status from "../Status/Status";
 import { styled } from "@material-ui/core/styles";
 import Divider from "@material-ui/core/Divider";
 
-const MyDivider = styled(Divider)({
+const StatusDivider = styled(Divider)({
   width: "100%",
   height: 1,
   backgroundColor: "#EEEEEE",
@@ -20,15 +20,21 @@ const Display = () => {
     <section className="display-section" style={{ width: 1103 }}>
       <div className="display-gray-bar" />
 
-      {/* .map will call all services */}
-      <Status />
-      <MyDivider />
-      <Status />
-      <MyDivider />
-      <Status />
-      <MyDivider />
-      <Status />
-      <MyDivider />
+      <ul style={{ listStyleType: "none" }}>
+        {/* .map will call all services status */}
+        <li>
+          <Status />
+          <StatusDivider />
+        </li>
+        <li>
+          <Status />
+          <StatusDivider />
+        </li>
+        <li>
+          <Status />
+          <StatusDivider />
+        </li>
+      </ul>
     </section>
   );
 };
