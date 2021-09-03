@@ -1,48 +1,34 @@
-/* 
-  Display.js renders all Services's Status by calling the component @Status.js.
-  This component uses the Status.Service.js service to fetch all data from the Services, 
-    and passes the returned data to its ownee (@Status.js).
-*/
-
-import styled from "styled-components";
-import { styled as styledUI } from "@material-ui/core/styles";
-import Divider from "@material-ui/core/Divider";
-import Status from "../Status/Status";
-import StatusInformation from "../StatusInformation/StatusInformation";
-
-const Container = styled.section`
-  width: 1103px;
-  margin-top: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
-
-const StatusDivider = styledUI(Divider)({
-  width: "100%",
-  height: 1,
-  backgroundColor: "#EEEEEE",
-});
+import {Container} from "./Display.styles";
+import Status from "../StatusTableRow/StatusTableRow";
+import StatusInformation from "../StatusTableHeader/StatusTableHeader";
+import {response} from "./MockAPI";
 
 const Display = () => {
+  // Mapping response status
+  const mapStatus = {
+    1: { status: "No Issues", color: "green"},
+    2: { status: "Degraded", color: "red"},
+    3: { status: "Website offline", color: "red"}
+  }
+
+  //useEffect -> fecth data from Services API
+    //setInterval(API)
+
   return (
     <Container>
       <StatusInformation />
       <ul style={{ listStyleType: "none", padding: 0 }}>
-        {/* .map will call all services status */}
-        <li>
-          <Status />
-          <StatusDivider />
-        </li>
-        <li>
-          <Status />
-          <StatusDivider />
-        </li>
-        <li>
-          <Status />
-          <StatusDivider />
-        </li>
+        {response.map((item, index) => {
+          return (
+            <li key={index}>
+              <Status 
+                service={item.service} 
+                description={item.description} 
+                status={mapStatus[item.status]}  
+              />
+            </li>
+          )
+        })}
       </ul>
     </Container>
   );

@@ -1,25 +1,12 @@
-import React from "react";
-import Button from "@material-ui/core/Button";
+import { useState } from "react";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import { styled } from "@material-ui/core";
-
-const MyButton = styled(Button)({
-  width: 80,
-  height: 31,
-  marginLeft: "2vw",
-  background: "#ffffff",
-  border: "1px solid #eeeeee",
-  boxSizing: "border-box",
-  borderRadius: 5,
-  textTransform: "none",
-  color: "#2D333A",
-});
+import {ModalButton} from "./ViewButton.styles";
 
 const ViewButton = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -31,9 +18,9 @@ const ViewButton = () => {
 
   return (
     <div>
-      <MyButton variant="outlined" color="primary" onClick={handleClickOpen}>
+      <ModalButton variant="outlined" color="primary" onClick={handleClickOpen}>
         View
-      </MyButton>
+      </ModalButton>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>{"Service Status"}</DialogTitle>
         <DialogContent>
