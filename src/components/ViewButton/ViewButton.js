@@ -7,9 +7,9 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import { styled } from "@material-ui/core";
 
 const MyButton = styled(Button)({
-  position: "absolute",
   width: 80,
   height: 31,
+  marginLeft: "2vw",
   background: "#ffffff",
   border: "1px solid #eeeeee",
   boxSizing: "border-box",

@@ -1,13 +1,20 @@
+import styled from "styled-components";
 import Display from "../components/Display/Display";
 import Header from "../components/Header/Header";
-import "./Homepage.container.css";
+
+const Container = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
 
 const Homepage = () => {
   return (
-    <section className="homepage">
+    <Container>
       <Header />
       <Display />
-    </section>
+    </Container>
   );
 };
 

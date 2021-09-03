@@ -4,12 +4,22 @@
     and passes the returned data to its ownee (@Status.js).
 */
 
-import "./Display.css";
-import Status from "../Status/Status";
-import { styled } from "@material-ui/core/styles";
+import styled from "styled-components";
+import { styled as styledUI } from "@material-ui/core/styles";
 import Divider from "@material-ui/core/Divider";
+import Status from "../Status/Status";
+import StatusInformation from "../StatusInformation/StatusInformation";
 
-const StatusDivider = styled(Divider)({
+const Container = styled.section`
+  width: 1103px;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
+const StatusDivider = styledUI(Divider)({
   width: "100%",
   height: 1,
   backgroundColor: "#EEEEEE",
@@ -17,10 +27,9 @@ const StatusDivider = styled(Divider)({
 
 const Display = () => {
   return (
-    <section className="display-section" style={{ width: 1103 }}>
-      <div className="display-gray-bar" />
-
-      <ul style={{ listStyleType: "none" }}>
+    <Container>
+      <StatusInformation />
+      <ul style={{ listStyleType: "none", padding: 0 }}>
         {/* .map will call all services status */}
         <li>
           <Status />
@@ -35,7 +44,7 @@ const Display = () => {
           <StatusDivider />
         </li>
       </ul>
-    </section>
+    </Container>
   );
 };
 
